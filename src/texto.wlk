@@ -1,4 +1,5 @@
 import wollok.game.*
+import personajes.*
 
 // ¡Los visuales también pueden ser texto!
 // Hay que definir la posición en la que debe aparecer
@@ -13,9 +14,9 @@ import wollok.game.*
 
 object texto {
 	
-	method position() = game.at(2, 4)
+	method position() = game.at(18, 18)
 	
-	method text() = "¡Pepita!"
+	method text() = (zombie.puntos()).toString()
 	
 	method textColor() = paleta.verde()
 	
