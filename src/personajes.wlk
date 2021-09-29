@@ -32,4 +32,12 @@ object zombie {
 	method tocaMoneda(moneda){
 		self.sumarPunto()
 	}
+	
+	method frase(){
+		return "juguemos"
+	}
+	
+	method hablar(){
+		game.say(self, self.frase())
+	}
 }

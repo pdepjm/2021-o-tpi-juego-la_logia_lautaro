@@ -8,6 +8,7 @@ object nivel {
 	method configuracionInicial(){
 		game.addVisual(zombie)
 		game.addVisual(enemigo)
+		game.addVisual(moneda)
 		self.configurarTeclas()
 	}
 	
@@ -16,6 +17,7 @@ object nivel {
 		keyboard.right().onPressDo({ zombie.moverPara(derecha) })
 		keyboard.up().onPressDo({zombie.moverPara(arriba)})
 		keyboard.down().onPressDo({zombie.moverPara(abajo)})
+		keyboard.enter().onPressDo({ zombie.hablar()} )
 		
 	}
 	
