@@ -24,7 +24,12 @@ object zombie {
 	}
 	
 	method recibirDanio() {
-		vidas = (vidas - 1).max(0)
+		if(vidas==1){
+			game.stop()
+		}
+		else{
+			vidas --
+		}	
 	}
 	
 	

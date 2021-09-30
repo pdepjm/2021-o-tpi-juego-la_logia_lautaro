@@ -1,4 +1,6 @@
 import wollok.game.*
+import direcciones.*
+
 object enemigo{
 	const posicion = game.at(4, 8)
 	method image() = "spikeMan_stand.png"
@@ -7,7 +9,8 @@ object enemigo{
 	method efecto(zombie) {
 		zombie.recibirDanio()
 	}
-	}
+	
+}
 	
 	
 class Moneda{
@@ -17,5 +20,6 @@ class Moneda{
 	
 	method efecto(zombie) {
 		zombie.sumarPuntos()
+		game.removeVisual(self)
 	}
 }	
