@@ -10,6 +10,7 @@ object nivel {
 		game.addVisual(enemigo)
 		game.addVisual(moneda)
 		self.configurarTeclas()
+		self.acciones()
 	}
 	
 	method configurarTeclas(){
@@ -23,7 +24,7 @@ object nivel {
 	
 	method acciones(){
 		game.onCollideDo(zombie, {enemigo_ => zombie.tocaEnemigo(enemigo_)})
-		game.onCollideDo(zombie, {moneda_=> zombie.tocaEnemigo(moneda_)})
+		game.onCollideDo(zombie, {moneda_ => zombie.tocaMoneda(moneda_)})
 	}
 	
 }
