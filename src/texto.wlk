@@ -12,13 +12,23 @@ import personajes.*
 // Les dejamos algunos ejemplos
 // ¡También se puede combinar con las imágenes!
 
-object texto {
+object textoPuntos {
 	
 	method position() = game.at(18, 18)
 	
 	method text() = (zombie.puntos()).toString()
 	
 	method textColor() = paleta.verde()
+	
+}
+
+object textoVidas {
+	
+	method position() = game.at(1, 18)
+	
+	method text() = (zombie.vidas()).toString()
+	
+	method textColor() = paleta.rojo()
 	
 }
 

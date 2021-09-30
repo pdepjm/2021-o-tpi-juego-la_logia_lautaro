@@ -3,7 +3,7 @@ import wollok.game.*
 object zombie {
 	var posicion = game.at(2,2)
 	var property puntos = 0
-	var vidas = 3
+	var property vidas = 3
 	
 	method position() {
 		return posicion
@@ -19,19 +19,14 @@ object zombie {
 		posicion = direccion.proximaPosicion(posicion) 
 	}
 	
-	//method puntos() = puntos
-	
-	method sumarPunto() {
+	method sumarPuntos() {
 		puntos += 10
 	}
 	
-	method tocaEnemigo(enemigo){
-		vidas = (vidas - 1). min(0)
+	method recibirDanio() {
+		vidas = (vidas - 1).max(0)
 	}
 	
-	method tocaMoneda(moneda){
-		self.sumarPunto()
-	}
 	
 	method frase(){
 		return "juguemos"

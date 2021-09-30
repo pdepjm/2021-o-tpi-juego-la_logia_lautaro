@@ -10,7 +10,6 @@ program juego {
 	game.width(20)
 	
 	game.title("Juego Base")
-	game.addVisual(texto)
 	
 	nivel.configuracionInicial()
 	
