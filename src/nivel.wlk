@@ -17,6 +17,7 @@ object nivel {
 		game.addVisual(textoVidas)
 		game.addVisual(zombie)
 		game.addVisual(enemigo)
+		game.addVisual(vida)
 		self.configurarMonedas()
 		self.configurarTeclas()
 		self.acciones()
@@ -48,4 +49,5 @@ object nivel {
 		game.addVisual(moneda5)
 	}
 	
+
 }

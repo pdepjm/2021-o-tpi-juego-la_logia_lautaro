@@ -1,4 +1,5 @@
 import wollok.game.*
+import enmigos_monedas.*
 
 object zombie {
 	var posicion = game.at(2,2)
@@ -10,7 +11,7 @@ object zombie {
 	} 
 	
 	method posicion(unaPosicion) {
-		posicion = unaPosicion
+			posicion = unaPosicion	
 	}
 
 	method image() = "character_zombie_walk1.png"
@@ -32,6 +33,13 @@ object zombie {
 		}	
 	}
 	
+	method estaVivo(){
+		return vidas >= 1
+	}
+	
+	method modificarVida(){
+		vidas = (vidas - 1).max(0)
+	}
 	
 	method frase(){
 		return "juguemos"
@@ -41,3 +49,18 @@ object zombie {
 		game.say(self, self.frase())
 	}
 }
+
+object vida{
+	const posicion = game.at(1,18)
+	
+	method position() {
+		return posicion
+	} 
+	method image() {
+		return "heart.png"   
+    }   
+}
+
+
+
+

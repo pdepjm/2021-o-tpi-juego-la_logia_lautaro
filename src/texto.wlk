@@ -24,9 +24,9 @@ object textoPuntos {
 
 object textoVidas {
 	
-	method position() = game.at(1, 18)
+	method position() = game.at(2, 18)
 	
-	method text() = "Vidas: " + (zombie.vidas()).toString()
+	method text() = "X " + (zombie.vidas()).toString()
 	
 	method textColor() = paleta.rojo()
 	
