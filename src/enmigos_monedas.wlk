@@ -2,13 +2,17 @@ import wollok.game.*
 import direcciones.*
 import nivel.*
 
-object enemigo{
-	const posicion = game.at(4, 8)
+class Enemigo{
+	var posicion = game.at(4, 8)
 	method image() = "spikeMan_stand.png"
 	method position() = posicion
 		
 	method efecto(zombie) {
 		zombie.recibirDanio()
+	}
+	
+	method moverParaDireccionAlAzar() {
+		 posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion)
 	}
 	
 }
