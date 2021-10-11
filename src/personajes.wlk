@@ -5,6 +5,7 @@ object zombie {
 	var posicion = game.at(2,2)
 	var property puntos = 0
 	var property vidas = 3
+	const frases = ["Juguemos!","Esquiva a los enemigos!","Agarra todas las monedas!"]
 	
 	method puntos() = puntos
 	
@@ -27,15 +28,24 @@ object zombie {
 		if(puntos==150){
 			game.addVisual(puerta)
 		}
+		else if(puntos==50){
+			const monedaSuper=new MonedaSuper()
+			game.addVisual(monedaSuper)
+		}
 	}
 	
 	method recibirDanio() {
 		if(vidas==1){
 			game.stop()
+			//game.boardGround("fondoPerdedor.jpg")
 		}
 		else{
 			vidas --
 		}	
+	}
+	
+	method sumarVida(){
+		vidas+=1
 	}
 	
 	method estaVivo(){
@@ -46,12 +56,9 @@ object zombie {
 		vidas = (vidas - 1).max(0)
 	}
 	
-	method frase(){
-		return "juguemos"
-	}
 	
 	method hablar(){
-		game.say(self, self.frase())
+		game.say(self,frases.anyOne())
 	}
 }
 
@@ -64,8 +71,6 @@ object vida{
 	method image() {
 		return "heart.png"   
     }   
+    
+    method efecto(zombie){}
 }
-
-
-
-

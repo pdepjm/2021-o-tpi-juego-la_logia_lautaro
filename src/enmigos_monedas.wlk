@@ -33,6 +33,16 @@ class Moneda{
 	}
 }
 
+class MonedaSuper inherits Moneda {
+	override method image() = "super.png"
+	
+	override method efecto(zombie) {
+		super(zombie)
+		//ACCION ESPECIAL
+		zombie.sumarVida()	
+	}
+}
+
 object puerta {
 	const posicion = game.at(3,16)
 	method position() = posicion
@@ -40,6 +50,18 @@ object puerta {
 	
 	method efecto(zombie){
 		//Hacer que algo pase cuando gane
+		//game.boardGround("fondoGanador.jpg")
 		game.stop()
+	}
+}
+
+object fondo {
+	const posicion = game.center()
+	var fondo="fondoGanador.jpg"
+	method position() = posicion
+	method image() = fondo
+	
+	method modificarFondo(nuevoFondo) {
+		fondo=nuevoFondo
 	}
 }	

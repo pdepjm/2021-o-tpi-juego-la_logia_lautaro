@@ -20,6 +20,8 @@ object textoPuntos {
 	
 	method textColor() = paleta.verde()
 	
+	method efecto(zombie){}
+	
 }
 
 object textoVidas {
@@ -29,6 +31,8 @@ object textoVidas {
 	method text() = "X " + (zombie.vidas()).toString()
 	
 	method textColor() = paleta.rojo()
+	
+	method efecto(zombie){}
 	
 }
 

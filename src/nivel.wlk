@@ -15,6 +15,7 @@ object nivel {
 	const enemigo2=new Enemigo(posicion = game.at(15, 5))	
 		
 	method configuracionInicial(){
+		//game.addVisual(fondo)
 		game.addVisual(textoPuntos)
 		game.addVisual(textoVidas)
 		game.addVisual(zombie)
