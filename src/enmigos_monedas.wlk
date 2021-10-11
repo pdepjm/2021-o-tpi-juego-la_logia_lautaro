@@ -12,7 +12,7 @@ class Enemigo{
 	}
 	
 	method moverParaDireccionAlAzar() {
-		 posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion)
+		posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion)
 	}
 	
 }
@@ -30,5 +30,16 @@ class Moneda{
 		zombie.sumarPuntos()
 		//game.removeVisual(self)
 		self.posicionAleatoria()
+	}
+}
+
+object puerta {
+	const posicion = game.at(3,16)
+	method position() = posicion
+	method image() = "puerta2.png"
+	
+	method efecto(zombie){
+		//Hacer que algo pase cuando gane
+		game.stop()
 	}
 }	

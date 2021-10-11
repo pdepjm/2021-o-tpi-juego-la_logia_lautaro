@@ -6,6 +6,8 @@ object zombie {
 	var property puntos = 0
 	var property vidas = 3
 	
+	method puntos() = puntos
+	
 	method position() {
 		return posicion
 	} 
@@ -22,6 +24,9 @@ object zombie {
 	
 	method sumarPuntos() {
 		puntos += 10
+		if(puntos==150){
+			game.addVisual(puerta)
+		}
 	}
 	
 	method recibirDanio() {

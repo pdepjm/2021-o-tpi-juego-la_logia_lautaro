@@ -22,7 +22,9 @@ object nivel {
 		self.configurarMonedas()
 		self.configurarEnemigos()
 		self.configurarTeclas()
-		//self.acciones()
+		
+		//POLIMORFISMO
+		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie)})
 	}
 	
 	method configurarTeclas(){
@@ -49,21 +51,24 @@ object nivel {
 		game.addVisual(moneda3)
 		game.addVisual(moneda4)
 		game.addVisual(moneda5)
-		game.onCollideDo(moneda1, {i => moneda1.efecto(zombie)})
-		game.onCollideDo(moneda2, {i => moneda2.efecto(zombie)})
-		game.onCollideDo(moneda3, {i => moneda3.efecto(zombie)})
-		game.onCollideDo(moneda4, {i => moneda4.efecto(zombie)})
-		game.onCollideDo(moneda5, {i => moneda5.efecto(zombie)})
+		//game.onCollideDo(moneda1, {i => moneda1.efecto(zombie)})
+		//game.onCollideDo(moneda2, {i => moneda2.efecto(zombie)})
+		//game.onCollideDo(moneda3, {i => moneda3.efecto(zombie)})
+		//game.onCollideDo(moneda4, {i => moneda4.efecto(zombie)})
+		//game.onCollideDo(moneda5, {i => moneda5.efecto(zombie)})
 	}
-	
+
 	method configurarEnemigos() {
 		game.addVisual(enemigo1)
 		game.addVisual(enemigo2)
 		game.onTick(500,"movimiento_enemigo",{enemigo1.moverParaDireccionAlAzar()})
 		game.onTick(500,"movimiento_enemigo",{enemigo2.moverParaDireccionAlAzar()})
-		game.onCollideDo(enemigo1, {i => enemigo1.efecto(zombie)})
-		game.onCollideDo(enemigo2, {i => enemigo2.efecto(zombie)})
+		//game.onCollideDo(enemigo1, {i => enemigo1.efecto(zombie)})
+		//game.onCollideDo(enemigo2, {i => enemigo2.efecto(zombie)})
 	}
 	
-
+	//NO SE PORQUE PERO TIRA ERROR
+	//method configurarPuerta(puerta_) {
+	//	game.onCollideDo(puerta,{i => puerta.efecto(zombie)})
+	//}
 }
