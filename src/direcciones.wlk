@@ -1,16 +1,46 @@
 object izquierda {
-	method proximaPosicion(posicionActual) = posicionActual.left(1) 
+	method proximaPosicion(posicionActual,objeto) =
+		if(objeto.position().x()!=0)
+		{
+		posicionActual.left(1) 
+		}
+		else {
+		posicionActual.left(0) 
+		}
+	
 }
 
 object derecha {
-	method proximaPosicion(posicionActual) = posicionActual.right(1) 
+	method proximaPosicion(posicionActual,objeto) =
+		if(objeto.position().x()!=19)
+		{
+		posicionActual.right(1) 
+		}
+		else {
+		posicionActual.right(0) 
+		}
+	
 }
 
 object arriba{
-	method proximaPosicion(posicionActual) = posicionActual.up(1)
+	method proximaPosicion(posicionActual,objeto) =
+		if(objeto.position().y()!=19)
+		{
+		posicionActual.up(1) 
+		}
+		else {
+		posicionActual.up(0) 
+		}
 }
 
 object abajo{
-	method proximaPosicion(posicionActual) = posicionActual.down(1)
+	method proximaPosicion(posicionActual,objeto) =
+		if(objeto.position().y()!=0)
+		{
+		posicionActual.down(1) 
+		}
+		else {
+		posicionActual.down(0) 
+		}
 }
 

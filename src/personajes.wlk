@@ -9,9 +9,7 @@ object zombie {
 	
 	method puntos() = puntos
 	
-	method position() {
-		return posicion
-	} 
+	method position() = posicion
 	
 	method posicion(unaPosicion) {
 			posicion = unaPosicion	
@@ -20,7 +18,7 @@ object zombie {
 	method image() = "character_zombie_walk1.png"
 
 	method moverPara(direccion) {
-		posicion = direccion.proximaPosicion(posicion) 
+		posicion = direccion.proximaPosicion(posicion,self) 
 	}
 	
 	method sumarPuntos() {

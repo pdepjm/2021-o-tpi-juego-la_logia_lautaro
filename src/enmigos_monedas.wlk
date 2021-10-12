@@ -12,7 +12,7 @@ class Enemigo{
 	}
 	
 	method moverParaDireccionAlAzar() {
-		posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion)
+		posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion,self)
 	}
 	
 }

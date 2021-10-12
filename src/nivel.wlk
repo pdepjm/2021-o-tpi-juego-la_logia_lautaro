@@ -13,6 +13,7 @@ object nivel {
 	const moneda5=new Moneda(posicion = game.at(14,12))
 	const enemigo1=new Enemigo(posicion = game.at(4, 8))
 	const enemigo2=new Enemigo(posicion = game.at(15, 5))	
+	const enemigo3=new Enemigo(posicion = game.at(10, 15))	
 		
 	method configuracionInicial(){
 		//game.addVisual(fondo)
@@ -62,8 +63,10 @@ object nivel {
 	method configurarEnemigos() {
 		game.addVisual(enemigo1)
 		game.addVisual(enemigo2)
+		game.addVisual(enemigo3)
 		game.onTick(500,"movimiento_enemigo",{enemigo1.moverParaDireccionAlAzar()})
 		game.onTick(500,"movimiento_enemigo",{enemigo2.moverParaDireccionAlAzar()})
+		game.onTick(500,"movimiento_enemigo",{enemigo3.moverParaDireccionAlAzar()})
 		//game.onCollideDo(enemigo1, {i => enemigo1.efecto(zombie)})
 		//game.onCollideDo(enemigo2, {i => enemigo2.efecto(zombie)})
 	}
