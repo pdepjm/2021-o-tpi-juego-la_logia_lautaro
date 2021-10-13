@@ -28,8 +28,7 @@ class Moneda{
 	}
 	method efecto(zombie) {
 		zombie.sumarPuntos()
-		//game.removeVisual(self)
-		self.posicionAleatoria()
+		game.removeVisual(self)
 	}
 }
 
