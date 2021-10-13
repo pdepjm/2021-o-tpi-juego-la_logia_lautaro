@@ -20,7 +20,7 @@ class Enemigo{
 	
 	
 class Moneda{
-	var posicion = game.at(7, 10)
+	var posicion
 	method image() = "coin_gold.png"
 	method position() = posicion
 	
@@ -33,13 +33,13 @@ class Moneda{
 	}
 }
 
-class MonedaSuper inherits Moneda {
+object monedaSuper inherits Moneda(posicion = game.at(10,10)) {
 	override method image() = "super.png"
 	
 	override method efecto(i) {
 		super(i)
 		//ACCION ESPECIAL
-		zombie.sumarVida()	
+		i.sumarVida()	
 	}
 }
 
@@ -50,7 +50,7 @@ object puerta {
 	
 	method efecto(i){
 		//Hacer que algo pase cuando gane
-		if(zombie.puntos()==50){
+		if(i.puntos()==60){
 			game.boardGround("fondoGanador.jpg")
 			game.stop()}
 	}

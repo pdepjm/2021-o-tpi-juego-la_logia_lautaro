@@ -6,13 +6,13 @@ import texto.*
 
 object nivel {
 	
-	const moneda1=new Moneda(posicion = game.at(4,4))
+	const property moneda1=new Moneda(posicion = game.at(4,4))
 	const moneda2=new Moneda(posicion = game.at(6,15))
 	const moneda3=new Moneda(posicion = game.at(2,7))
 	const moneda4=new Moneda(posicion = game.at(9,18))
 	const moneda5=new Moneda(posicion = game.at(14,12))
-	const supermoneda=new MonedaSuper(posicion = game.at(10,10))
-	const enemigo1=new Enemigo(posicion = game.at(4, 8))
+	//const property supermoneda= monedaSuper
+	const property enemigo1=new Enemigo(posicion = game.at(4, 8))
 	const enemigo2=new Enemigo(posicion = game.at(15, 5))	
 	const enemigo3=new Enemigo(posicion = game.at(10, 15))	
 		
@@ -23,6 +23,7 @@ object nivel {
 		game.addVisual(textoVidas)
 		game.addVisual(zombie)
 		game.addVisual(vida)
+		game.addVisual(monedaSuper)
 		self.configurarMonedas()
 		self.configurarEnemigos()
 		self.configurarTeclas()
@@ -56,7 +57,6 @@ object nivel {
 		game.addVisual(moneda3)
 		game.addVisual(moneda4)
 		game.addVisual(moneda5)
-		game.addVisual(supermoneda)
 		//game.onCollideDo(moneda1, {i => moneda1.efecto(zombie)})
 		//game.onCollideDo(moneda2, {i => moneda2.efecto(zombie)})
 		//game.onCollideDo(moneda3, {i => moneda3.efecto(zombie)})

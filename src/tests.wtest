@@ -1,6 +1,11 @@
 import soundProducer.*
+import personajes.*
+import enmigos_monedas.*
+import direcciones.*
+import nivel.*
+import wollok.game.*
 
-describe "Inserte descripción" {
+/*describe "Inserte descripción" {
 	method initialize() {
 		soundProducer.provider(soundProviderMock)		
 	}
@@ -8,4 +13,24 @@ describe "Inserte descripción" {
 	test "testX" {
 		assert.that(true)
 	}	
+	*/
+	
+test "Al moverse hacia una direccion cambia su posicion" {
+	zombie.moverPara(derecha)
+	assert.equals(game.at(3,2), zombie.position())
+}
+
+test "cuando toca una moneda aumenta sus puntos" {
+	nivel.moneda1().efecto(zombie)
+	assert.equals(10, zombie.puntos())
+}
+
+
+test "cuando toca un enemigo pierde vida"{
+	nivel.enemigo1().efecto(zombie)
+	assert.equals(2, zombie.vidas())
+}
+test "cuando toca la super moneda aumenta la vida"{
+	monedaSuper.efecto(zombie)
+	assert.equals(4, zombie.vidas())
 }
