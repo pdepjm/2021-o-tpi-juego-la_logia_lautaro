@@ -26,10 +26,10 @@ object zombie {
 		if(puntos==150){
 			game.addVisual(puerta)
 		}
-		else if(puntos==50){
-			const monedaSuper=new MonedaSuper()
-			game.addVisual(monedaSuper)
-		}
+//		else if(puntos==50){
+//			const monedaSuper=new MonedaSuper()
+//			game.addVisual(monedaSuper)
+//		}
 	}
 	
 	method recibirDanio() {

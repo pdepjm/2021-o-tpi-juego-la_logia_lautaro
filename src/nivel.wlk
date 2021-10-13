@@ -9,13 +9,15 @@ object nivel {
 	const moneda1=new Moneda(posicion = game.at(4,4))
 	const moneda2=new Moneda(posicion = game.at(6,15))
 	const moneda3=new Moneda(posicion = game.at(2,7))
-	const moneda4=new Moneda(posicion = game.at(9,20))
+	const moneda4=new Moneda(posicion = game.at(9,18))
 	const moneda5=new Moneda(posicion = game.at(14,12))
+	const supermoneda=new MonedaSuper(posicion = game.at(10,10))
 	const enemigo1=new Enemigo(posicion = game.at(4, 8))
 	const enemigo2=new Enemigo(posicion = game.at(15, 5))	
 	const enemigo3=new Enemigo(posicion = game.at(10, 15))	
 		
 	method configuracionInicial(){
+		game.boardGround("fondo.jpg")
 		//game.addVisual(fondo)
 		game.addVisual(textoPuntos)
 		game.addVisual(textoVidas)
@@ -24,6 +26,7 @@ object nivel {
 		self.configurarMonedas()
 		self.configurarEnemigos()
 		self.configurarTeclas()
+		self.configurarPuerta()
 		
 		//POLIMORFISMO
 		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie)})
@@ -53,6 +56,7 @@ object nivel {
 		game.addVisual(moneda3)
 		game.addVisual(moneda4)
 		game.addVisual(moneda5)
+		game.addVisual(supermoneda)
 		//game.onCollideDo(moneda1, {i => moneda1.efecto(zombie)})
 		//game.onCollideDo(moneda2, {i => moneda2.efecto(zombie)})
 		//game.onCollideDo(moneda3, {i => moneda3.efecto(zombie)})
@@ -71,8 +75,9 @@ object nivel {
 		//game.onCollideDo(enemigo2, {i => enemigo2.efecto(zombie)})
 	}
 	
-	//NO SE PORQUE PERO TIRA ERROR
-	//method configurarPuerta(puerta_) {
-	//	game.onCollideDo(puerta,{i => puerta.efecto(zombie)})
-	//}
+	
+	method configurarPuerta() {
+		game.addVisual(puerta)
+		
+	}
 }

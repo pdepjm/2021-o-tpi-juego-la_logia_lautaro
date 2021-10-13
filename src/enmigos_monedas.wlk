@@ -1,5 +1,6 @@
 import wollok.game.*
 import direcciones.*
+import personajes.*
 import nivel.*
 
 class Enemigo{
@@ -7,8 +8,8 @@ class Enemigo{
 	method image() = "spikeMan_stand.png"
 	method position() = posicion
 		
-	method efecto(zombie) {
-		zombie.recibirDanio()
+	method efecto(i) {
+		i.recibirDanio()
 	}
 	
 	method moverParaDireccionAlAzar() {
@@ -23,11 +24,11 @@ class Moneda{
 	method image() = "coin_gold.png"
 	method position() = posicion
 	
-	method posicionAleatoria(){
-		posicion = game.at (1.randomUpTo(20),1.randomUpTo(20))
-	}
-	method efecto(zombie) {
-		zombie.sumarPuntos()
+	//method posicionAleatoria(){
+		//posicion = game.at (1.randomUpTo(20),1.randomUpTo(20))
+	//}
+	method efecto(i) {
+		i.sumarPuntos()
 		game.removeVisual(self)
 	}
 }
@@ -35,8 +36,8 @@ class Moneda{
 class MonedaSuper inherits Moneda {
 	override method image() = "super.png"
 	
-	override method efecto(zombie) {
-		super(zombie)
+	override method efecto(i) {
+		super(i)
 		//ACCION ESPECIAL
 		zombie.sumarVida()	
 	}
@@ -47,14 +48,15 @@ object puerta {
 	method position() = posicion
 	method image() = "puerta2.png"
 	
-	method efecto(zombie){
+	method efecto(i){
 		//Hacer que algo pase cuando gane
-		//game.boardGround("fondoGanador.jpg")
-		game.stop()
+		if(zombie.puntos()==50){
+			game.boardGround("fondoGanador.jpg")
+			game.stop()}
 	}
 }
 
-object fondo {
+/*object fondo {
 	const posicion = game.center()
 	var fondo="fondoGanador.jpg"
 	method position() = posicion
@@ -63,4 +65,4 @@ object fondo {
 	method modificarFondo(nuevoFondo) {
 		fondo=nuevoFondo
 	}
-}	
+}*/
