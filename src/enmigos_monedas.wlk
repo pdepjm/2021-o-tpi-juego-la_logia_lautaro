@@ -3,26 +3,26 @@ import direcciones.*
 import personajes.*
 import nivel.*
 
-class Enemigo{
-	var posicion = game.at(4, 8)
-	method image() = "spikeMan_stand.png"
-	method position() = posicion
+class Enemigo inherits Visual(image = "spikeMan_stand.png",position = new Position(x=4,y=8)){
+	//var posicion = game.at(4, 8)
+	//method image() = "spikeMan_stand.png"
+	//method position() = posicion
 		
 	method efecto(i) {
 		i.recibirDanio()
 	}
 	
 	method moverParaDireccionAlAzar() {
-		posicion = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(posicion,self)
+		position = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(self.position(),self)
 	}
 	
 }
 	
 	
-class Moneda{
-	var posicion
-	method image() = "coin_gold.png"
-	method position() = posicion
+class Moneda inherits Visual(image = "coin_gold.png" ,position = new Position()){
+	//var posicion
+	//method image() = "coin_gold.png"
+	//method position() = posicion
 	
 	//method posicionAleatoria(){
 		//posicion = game.at (1.randomUpTo(20),1.randomUpTo(20))
@@ -33,8 +33,8 @@ class Moneda{
 	}
 }
 
-object monedaSuper inherits Moneda(posicion = game.at(10,10)) {
-	override method image() = "super.png"
+object monedaSuper inherits Moneda(image = "super.png" ,position = game.at(10,10)) {
+	//override method image() = "super.png"
 	
 	override method efecto(i) {
 		super(i)
@@ -43,10 +43,10 @@ object monedaSuper inherits Moneda(posicion = game.at(10,10)) {
 	}
 }
 
-object puerta {
-	const posicion = game.at(3,16)
-	method position() = posicion
-	method image() = "puerta2.png"
+object puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
+	//const posicion = game.at(3,16)
+	//method position() = posicion
+	//method image() = "puerta2.png"
 	
 	method efecto(i){
 		//Hacer que algo pase cuando gane

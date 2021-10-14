@@ -1,24 +1,24 @@
 import wollok.game.*
 import enmigos_monedas.*
 
-object zombie {
-	var posicion = game.at(2,2)
+object zombie inherits Visual(image = "character_zombie_walk1.png",position = new Position(x=2,y=2)) {
+	//var posicion = game.at(2,2)
 	var property puntos = 0
 	var property vidas = 3
 	const frases = ["Juguemos!","Esquiva a los enemigos!","Agarra todas las monedas!"]
 	
 	method puntos() = puntos
 	
-	method position() = posicion
+	//method position() = posicion
 	
-	method posicion(unaPosicion) {
-			posicion = unaPosicion	
-	}
+	//method posicion(unaPosicion) {
+	    //posicion = unaPosicion	
+	//}
 
-	method image() = "character_zombie_walk1.png"
+	//method image() = "character_zombie_walk1.png"
 
-	method moverPara(direccion) {
-		posicion = direccion.proximaPosicion(posicion,self) 
+	method moverPara(direccion){
+		self.position(direccion.proximaPosicion(self.position(),self)) 
 	}
 	
 	method sumarPuntos() {
@@ -60,15 +60,22 @@ object zombie {
 	}
 }
 
-object vida{
-	const posicion = game.at(1,18)
+object vida inherits Visual(image = "heart.png" ,position = new Position(x=1,y=18)){
+	//const posicion = game.at(1,18)
 	
-	method position() {
-		return posicion
-	} 
-	method image() {
-		return "heart.png"   
-    }   
+	//method position() {
+		//return posicion
+	//} 
+	//method image() {
+		//return "heart.png"   
+    //}   
     
     method efecto(zombie){}
+}
+
+class Visual {
+	var property image
+	var property position = game.origin()
+	
+	//method position() = posicion
 }

@@ -6,15 +6,15 @@ import texto.*
 
 object nivel {
 	
-	const property moneda1=new Moneda(posicion = game.at(4,4))
-	const moneda2=new Moneda(posicion = game.at(6,15))
-	const moneda3=new Moneda(posicion = game.at(2,7))
-	const moneda4=new Moneda(posicion = game.at(9,18))
-	const moneda5=new Moneda(posicion = game.at(14,12))
+	const property moneda1=new Moneda(position = game.at(4,4))
+	const moneda2=new Moneda(position = game.at(6,15))
+	const moneda3=new Moneda(position = game.at(2,7))
+	const moneda4=new Moneda(position = game.at(9,18))
+	const moneda5=new Moneda(position = game.at(14,12))
 	//const property supermoneda= monedaSuper
-	const property enemigo1=new Enemigo(posicion = game.at(4, 8))
-	const enemigo2=new Enemigo(posicion = game.at(15, 5))	
-	const enemigo3=new Enemigo(posicion = game.at(10, 15))	
+	const property enemigo1=new Enemigo(position = game.at(4, 8))
+	const enemigo2=new Enemigo(position = game.at(15, 5))	
+	const enemigo3=new Enemigo(position = game.at(10, 15))	
 		
 	method configuracionInicial(){
 		game.boardGround("fondo.jpg")

@@ -44,3 +44,9 @@ object abajo{
 		}
 }
 
+//object movimiento{
+	//method moverPara(direccion, personaje){
+		//personaje.position(direccion.proximaPosicion(personaje.position(), personaje))
+		
+//	}
+//}
