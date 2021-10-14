@@ -8,12 +8,12 @@ class Enemigo inherits Visual(image = "spikeMan_stand.png",position = new Positi
 	//method image() = "spikeMan_stand.png"
 	//method position() = posicion
 		
-	method efecto(i) {
-		i.recibirDanio()
+	method efecto(personaje) {
+		personaje.recibirDanio()
 	}
 	
 	method moverParaDireccionAlAzar() {
-		position = [izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(self.position(),self)
+		self.position([izquierda,derecha,arriba,abajo].anyOne().proximaPosicion(self.position(),self))
 	}
 	
 }
@@ -27,8 +27,8 @@ class Moneda inherits Visual(image = "coin_gold.png" ,position = new Position())
 	//method posicionAleatoria(){
 		//posicion = game.at (1.randomUpTo(20),1.randomUpTo(20))
 	//}
-	method efecto(i) {
-		i.sumarPuntos()
+	method efecto(personaje) {
+		personaje.sumarPuntos()
 		game.removeVisual(self)
 	}
 }
@@ -48,9 +48,9 @@ object puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
 	//method position() = posicion
 	//method image() = "puerta2.png"
 	
-	method efecto(i){
+	method efecto(personaje){
 		//Hacer que algo pase cuando gane
-		if(i.puntos()==60){
+		if(personaje.puntos()==60){
 			game.boardGround("fondoGanador.jpg")
 			game.stop()}
 	}
