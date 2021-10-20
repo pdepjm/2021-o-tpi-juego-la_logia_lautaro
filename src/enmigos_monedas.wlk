@@ -3,7 +3,7 @@ import direcciones.*
 import personajes.*
 import nivel.*
 
-class Enemigo inherits Visual(image = "spikeMan_stand.png",position = new Position(x=4,y=8)){
+class Enemigo inherits Visual(image = "spikeMan_stand.png"){
 	//var posicion = game.at(4, 8)
 	//method image() = "spikeMan_stand.png"
 	//method position() = posicion
@@ -19,7 +19,7 @@ class Enemigo inherits Visual(image = "spikeMan_stand.png",position = new Positi
 }
 	
 	
-class Moneda inherits Visual(image = "coin_gold.png" ,position = new Position()){
+class Moneda inherits Visual(image = "coin_gold.png"){
 	//var posicion
 	//method image() = "coin_gold.png"
 	//method position() = posicion
@@ -33,7 +33,7 @@ class Moneda inherits Visual(image = "coin_gold.png" ,position = new Position())
 	}
 }
 
-object monedaSuper inherits Moneda(image = "super.png" ,position = game.at(10,10)) {
+class MonedaSuper inherits Moneda(image = "super.png") {
 	//override method image() = "super.png"
 	
 	override method efecto(i) {
@@ -43,7 +43,7 @@ object monedaSuper inherits Moneda(image = "super.png" ,position = game.at(10,10
 	}
 }
 
-object puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
+class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
 	//const posicion = game.at(3,16)
 	//method position() = posicion
 	//method image() = "puerta2.png"

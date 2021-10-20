@@ -4,14 +4,16 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
+
 object nivel {
 	
-	const property moneda1=new Moneda(position = game.at(4,4))
-	const moneda2=new Moneda(position = game.at(6,15))
-	const moneda3=new Moneda(position = game.at(2,7))
-	const moneda4=new Moneda(position = game.at(9,18))
-	const moneda5=new Moneda(position = game.at(14,12))
-	//const property supermoneda= monedaSuper
+	const property moneda1=new Moneda()
+	const moneda2=new Moneda()
+	const moneda3=new Moneda()
+	const moneda4=new Moneda()
+	const moneda5=new Moneda()
+	const property supermoneda = new MonedaSuper()
+	const puerta1 = new Puerta()
 	const property enemigo1=new Enemigo(position = game.at(4, 8))
 	const enemigo2=new Enemigo(position = game.at(15, 5))	
 	const enemigo3=new Enemigo(position = game.at(10, 15))	
@@ -23,7 +25,7 @@ object nivel {
 		game.addVisual(textoVidas)
 		game.addVisual(zombie)
 		game.addVisual(vida)
-		game.addVisual(monedaSuper)
+		game.addVisual(supermoneda)
 		self.configurarMonedas()
 		self.configurarEnemigos()
 		self.configurarTeclas()
@@ -77,7 +79,7 @@ object nivel {
 	
 	
 	method configurarPuerta() {
-		game.addVisual(puerta)
+		game.addVisual(puerta1)
 		
 	}
 }

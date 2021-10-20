@@ -23,9 +23,9 @@ object zombie inherits Visual(image = "character_zombie_walk1.png",position = ne
 	
 	method sumarPuntos() {
 		puntos += 10
-		if(puntos==150){
-			game.addVisual(puerta)
-		}
+//		if(puntos==150){
+//			game.addVisual(puerta)
+//		}
 //		else if(puntos==50){
 //			const monedaSuper=new MonedaSuper()
 //			game.addVisual(monedaSuper)
@@ -75,7 +75,11 @@ object vida inherits Visual(image = "heart.png" ,position = new Position(x=1,y=1
 
 class Visual {
 	var property image
-	var property position = game.origin()
+	
+	//Posicion aleatoria
+	const x = 0.randomUpTo(game.width()).truncate(0)
+    const y = 0.randomUpTo(game.height()).truncate(0)
+	var property position = game.at(x,y)
 	
 	//method position() = posicion
 }

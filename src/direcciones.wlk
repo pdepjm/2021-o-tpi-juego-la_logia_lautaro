@@ -6,8 +6,7 @@ object izquierda {
 		}
 		else {
 		posicionActual.left(0) 
-		}
-	
+		}	
 }
 
 object derecha {
