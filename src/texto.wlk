@@ -20,7 +20,7 @@ object textoPuntos {
 	
 	method textColor() = paleta.verde()
 	
-	method efecto(unzombie){}
+	method efecto(unzombie,nivelSiguiente){}
 	
 }
 
@@ -32,7 +32,7 @@ object textoVidas {
 	
 	method textColor() = paleta.rojo()
 	
-	method efecto(unzombie){}
+	method efecto(unzombie,nivelSiguiente){}
 	
 }
 

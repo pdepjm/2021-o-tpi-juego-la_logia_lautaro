@@ -70,7 +70,7 @@ object vida inherits Visual(image = "heart.png" ,position = new Position(x=1,y=1
 		//return "heart.png"   
     //}   
     
-    method efecto(zombie){}
+    method efecto(zombie,nivelSiguiente){}
 }
 
 class Visual {

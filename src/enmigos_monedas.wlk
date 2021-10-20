@@ -8,7 +8,7 @@ class Enemigo inherits Visual(image = "spikeMan_stand.png"){
 	//method image() = "spikeMan_stand.png"
 	//method position() = posicion
 		
-	method efecto(personaje) {
+	method efecto(personaje,nivelSiguiente) {
 		personaje.recibirDanio()
 	}
 	
@@ -27,7 +27,7 @@ class Moneda inherits Visual(image = "coin_gold.png"){
 	//method posicionAleatoria(){
 		//posicion = game.at (1.randomUpTo(20),1.randomUpTo(20))
 	//}
-	method efecto(personaje) {
+	method efecto(personaje,nivelSiguiente) {
 		personaje.sumarPuntos()
 		game.removeVisual(self)
 	}
@@ -36,23 +36,23 @@ class Moneda inherits Visual(image = "coin_gold.png"){
 class MonedaSuper inherits Moneda(image = "super.png") {
 	//override method image() = "super.png"
 	
-	override method efecto(i) {
-		super(i)
+	override method efecto(personaje,nivelSiguiente) {
+		super(personaje,nivelSiguiente)
 		//ACCION ESPECIAL
-		i.sumarVida()	
+		personaje.sumarVida()	
 	}
 }
 
 class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
-	//const posicion = game.at(3,16)
-	//method position() = posicion
-	//method image() = "puerta2.png"
-	
-	method efecto(personaje){
+	const puntosAConseguir = 60
+	method efecto(personaje,nivelSiguiente){
 		//Hacer que algo pase cuando gane
-		if(personaje.puntos()==60){
-			game.boardGround("fondoGanador.jpg")
-			game.stop()}
+		if(personaje.puntos()==puntosAConseguir){
+			//game.boardGround("fondoGanador.jpg")
+			//game.stop()
+			game.clear()
+			nivelSiguiente.configuracionInicial()
+		}
 	}
 }
 

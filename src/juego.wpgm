@@ -11,7 +11,7 @@ program juego {
 	
 	game.title("Juego Base")
 	
-	nivel.configuracionInicial()
+	nivel1.configuracionInicial()
 	
 	game.start()
 }
