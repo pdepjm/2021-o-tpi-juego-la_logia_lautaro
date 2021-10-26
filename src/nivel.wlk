@@ -13,7 +13,7 @@ object nivel1 {
 	const moneda4=new Moneda()
 	const moneda5=new Moneda()
 	const property supermoneda = new MonedaSuper()
-	const puerta1 = new Puerta()
+	const puerta1 = new Puerta(nivelSiguiente=nivel2)
 	const property enemigo1=new Enemigo(position = game.at(4, 8))
 	const enemigo2=new Enemigo(position = game.at(15, 5))	
 	const enemigo3=new Enemigo(position = game.at(10, 15))	
@@ -32,7 +32,7 @@ object nivel1 {
 		self.configurarPuerta()
 		
 		//POLIMORFISMO
-		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie,nivel2)})
+		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie)})
 	}
 	
 	method configurarTeclas(){
@@ -99,7 +99,9 @@ object nivel2 {
 	
 	const property supermoneda = new MonedaSuper()
 	
-	const puerta2 = new Puerta(puntosAConseguir=170)
+	const puerta2 = new Puerta(puntosAConseguir=170,nivelSiguiente=nivel3)
+	
+	const reloj = new Reloj()
 	
 	const property enemigo1=new Enemigo(image = "monster_blue.png")
 	const enemigo2=new Enemigo(image = "monster_blue.png")	
@@ -115,14 +117,17 @@ object nivel2 {
 		game.addVisual(textoVidas)
 		game.addVisual(zombie)
 		game.addVisual(vida)
+		
+		game.addVisual(reloj)
 		game.addVisual(supermoneda)
+		
 		self.configurarMonedas()
 		self.configurarEnemigos()
 		self.configurarTeclas()
 		self.configurarPuerta()
 		
 		//POLIMORFISMO
-		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie,nivel3)})
+		game.onCollideDo(zombie,{elemento=>elemento.efecto(zombie)})
 	}
 	
 	method configurarTeclas(){
@@ -155,12 +160,12 @@ object nivel2 {
 		game.addVisual(enemigo4)
 		game.addVisual(enemigo5)
 		game.addVisual(enemigo6)
-		game.onTick(500,"movimiento_enemigo",{enemigo1.moverParaDireccionAlAzar()})
-		game.onTick(500,"movimiento_enemigo",{enemigo2.moverParaDireccionAlAzar()})
-		game.onTick(500,"movimiento_enemigo",{enemigo3.moverParaDireccionAlAzar()})
-		game.onTick(500,"movimiento_enemigo",{enemigo4.moverParaDireccionAlAzar()})
-		game.onTick(500,"movimiento_enemigo",{enemigo5.moverParaDireccionAlAzar()})
-		game.onTick(500,"movimiento_enemigo",{enemigo6.moverParaDireccionAlAzar()})
+		game.onTick(400,"movimiento_enemigo",{enemigo1.moverParaDireccionAlAzar()})
+		game.onTick(300,"movimiento_enemigo",{enemigo2.moverParaDireccionAlAzar()})
+		game.onTick(400,"movimiento_enemigo",{enemigo3.moverParaDireccionAlAzar()})
+		game.onTick(300,"movimiento_enemigo",{enemigo4.moverParaDireccionAlAzar()})
+		game.onTick(400,"movimiento_enemigo",{enemigo5.moverParaDireccionAlAzar()})
+		game.onTick(300,"movimiento_enemigo",{enemigo6.moverParaDireccionAlAzar()})
 	}
 	
 	
