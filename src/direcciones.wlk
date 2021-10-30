@@ -11,7 +11,7 @@ object izquierda {
 
 object derecha {
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().x()!=19)
+		if(objeto.position().x()!=28)
 		{
 		posicionActual.right(1) 
 		}
@@ -23,7 +23,7 @@ object derecha {
 
 object arriba{
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().y()!=19)
+		if(objeto.position().y()!=18)
 		{
 		posicionActual.up(1) 
 		}

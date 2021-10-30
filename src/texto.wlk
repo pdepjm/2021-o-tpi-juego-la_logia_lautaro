@@ -14,9 +14,9 @@ import personajes.*
 
 object textoPuntos {
 	
-	method position() = game.at(18, 18)
+	method position() = game.at(28, 18)
 	
-	method text() = "Puntos: " + (zombie.puntos()).toString()
+	method text() = "Puntos: " + (personaje.puntos()).toString()
 	
 	method textColor() = paleta.verde()
 	
@@ -28,11 +28,11 @@ object textoVidas {
 	
 	method position() = game.at(2, 18)
 	
-	method text() = "X " + (zombie.vidas()).toString()
+	method text() = "X " + (personaje.vidas()).toString()
 	
 	method textColor() = paleta.rojo()
 	
-	method efecto(unzombie){}
+	method efecto(personaje_){}
 	
 }
 
