@@ -4,14 +4,9 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
-object pantalla inherits Visual(image = "intro_juego.gif", position = game.at(0,0)) {
-	method inicio(){
-		game.addVisual("intro_juego.gif")
-	}
-}
 
 object nivel1 {
-	
+	const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
 	const moneda3=new Moneda()
@@ -29,6 +24,15 @@ object nivel1 {
 	const enemigo5=new Enemigo()	
 	const enemigo6=new Enemigo()	
 	
+	
+	method pantallaInicio(){
+		game.clear()
+		game.title("zombie attack")
+		game.height(20)
+	    game.width(30)
+		game.addVisual(inicioDelJuego)
+		keyboard.a().onPressDo{self.configuracionInicial()}
+	}
 		
 	method configuracionInicial(){
 		game.boardGround("fondo.jpg")
@@ -214,7 +218,7 @@ object nivel3 {
 	
 	method configuracionInicial(){
 		game.clear()
-		const fondoGanador = new Visual (image="fondoGanador2.jpg",position=game.at(0,0))
+		const fondoGanador = new Visual (image = "fondoGanador2.jpg" ,position=game.at(0,0))
 		game.addVisual(fondoGanador)
 		keyboard.e().onPressDo({game.stop()} )
 	}

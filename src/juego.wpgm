@@ -9,8 +9,7 @@ program juego {
 	game.height(20)
 	game.width(30)
 	
-	game.title("Juego Base")
-	pantalla.inicio()
+    nivel1.pantallaInicio()
 	nivel1.configuracionInicial()
 	
 	game.start()
