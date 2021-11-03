@@ -4,6 +4,13 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
+object nivel0 {
+	const boton1 = new Boton (nivelSiguiente=nivel1)
+	
+	method configuracionInicial(){
+		game.boardGround("introjuego2.png")
+	}
+}//esto es horrrible
 
 object nivel1 {
 	const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))

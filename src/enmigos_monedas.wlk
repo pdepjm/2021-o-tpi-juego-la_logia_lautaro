@@ -52,3 +52,8 @@ class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
 		}
 	}
 }
+
+class Boton inherits Visual (image = "boton.png", position= game.at(10,15)){
+	const nivelSiguiente
+	
+}
