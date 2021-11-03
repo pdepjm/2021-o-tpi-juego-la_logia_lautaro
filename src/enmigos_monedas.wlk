@@ -33,12 +33,13 @@ class MonedaSuper inherits Moneda(image = "super.png") {
 }
 
 //Deja quieto a un enemigo
-class Reloj inherits Visual(image="reloj.png") {
+/*class Reloj inherits Visual(image="reloj.png") {
 	method efecto(personaje_) {
 		game.removeTickEvent("movimiento_enemigo")
 		game.removeVisual(self)
 	}
-}
+}*/
+
 
 class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
 	const puntosAConseguir = 90

@@ -15,7 +15,7 @@ import wollok.game.*
 	}	
 	*/
 	
-test "Al moverse hacia una direccion cambia su posicion" {
+/*test "Al moverse hacia una direccion cambia su posicion" {
 	zombie.moverPara(derecha)
 	assert.equals(game.at(3,2), zombie.position())
 }
@@ -34,3 +34,4 @@ test "cuando toca la super moneda aumenta la vida"{
 	monedaSuper.efecto(zombie)
 	assert.equals(4, zombie.vidas())
 }
+*/

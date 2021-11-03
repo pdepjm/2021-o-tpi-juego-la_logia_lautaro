@@ -4,6 +4,11 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
+object pantalla inherits Visual(image = "intro_juego.gif", position = game.at(0,0)) {
+	method inicio(){
+		game.addVisual("intro_juego.gif")
+	}
+}
 
 object nivel1 {
 	

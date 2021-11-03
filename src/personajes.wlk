@@ -3,7 +3,7 @@ import enmigos_monedas.*
 
 object personaje inherits Visual(image = "character_zombie_walk1.png",position = new Position(x=2,y=2)) {
 	//var posicion = game.at(2,2)
-	var property puntos = 0
+	var puntos = 0
 	var property vidas = 3
 	const frases = ["Juguemos!","Esquiva a los enemigos!","Agarra todas las monedas!"]
 	
