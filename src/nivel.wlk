@@ -5,15 +5,17 @@ import wollok.game.*
 import texto.*
 
 object nivel0 {
-	const boton1 = new Boton (nivelSiguiente=nivel1)
-	
+	const fondoIntro = new Visual (image = "introjuego2Grande.jpg" ,position=game.at(0,0))
+		
 	method configuracionInicial(){
-		game.boardGround("introjuego2.png")
+		game.boardGround("fondo.jpg")
+		game.addVisual(fondoIntro)
+		keyboard.space().onPressDo({nivel1.configuracionInicial()} )
 	}
 }//esto es horrrible
 
 object nivel1 {
-	const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
+	//const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
 	const moneda3=new Moneda()
@@ -32,17 +34,17 @@ object nivel1 {
 	const enemigo6=new Enemigo()	
 	
 	
-	method pantallaInicio(){
-		game.clear()
-		game.title("zombie attack")
-		game.height(20)
-	    game.width(30)
-		game.addVisual(inicioDelJuego)
-		keyboard.a().onPressDo{self.configuracionInicial()}
-	}
+	//method pantallaInicio(){
+	//	game.clear()
+	//	game.title("zombie attack")
+	//	game.height(20)
+	 //   game.width(30)
+	//	game.addVisual(inicioDelJuego)
+	//	keyboard.a().onPressDo{self.configuracionInicial()}
+	//}
 		
 	method configuracionInicial(){
-		game.boardGround("fondo.jpg")
+		game.clear()
 		game.addVisual(puerta1)
 		game.addVisual(textoPuntos)
 		game.addVisual(textoVidas)
@@ -148,7 +150,7 @@ object nivel2 {
 	const enemigo10=new Enemigo(image = "monster_red.png")	
 		
 	method configuracionInicial(){
-		game.boardGround("fondo2.jpg")
+		//game.boardGround("fondo2.jpg")
 		game.addVisual(puerta2)
 		game.addVisual(textoPuntos)
 		game.addVisual(textoVidas)

@@ -53,8 +53,8 @@ class Visual {
 	var property image
 	
 	//Posicion aleatoria
-	const x = 0.randomUpTo(28.truncate(0))
-    const y = 0.randomUpTo(18.truncate(0))
+	const x = 0.randomUpTo(27.truncate(0))
+    const y = 1.randomUpTo(17.truncate(1))
 	var property position = game.at(x,y)
 	
 }

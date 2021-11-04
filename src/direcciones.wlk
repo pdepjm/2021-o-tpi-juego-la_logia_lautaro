@@ -34,7 +34,7 @@ object arriba{
 
 object abajo{
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().y()!=0)
+		if(objeto.position().y()!=1)
 		{
 		posicionActual.down(1) 
 		}

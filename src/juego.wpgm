@@ -10,8 +10,7 @@ program juego {
 	game.width(30)
 	
 
-    nivel1.pantallaInicio()
-	nivel1.configuracionInicial()
+	nivel0.configuracionInicial()
 	
 	game.start()
 }
