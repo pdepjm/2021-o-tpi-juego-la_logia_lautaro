@@ -8,11 +8,11 @@ object nivel0 {
 	const fondoIntro = new Visual (image = "introjuego2Grande.jpg" ,position=game.at(0,0))
 		
 	method configuracionInicial(){
-		game.boardGround("fondo.jpg")
+		game.boardGround("board1.jpg")
 		game.addVisual(fondoIntro)
 		keyboard.space().onPressDo({nivel1.configuracionInicial()} )
 	}
-}//esto es horrrible
+}
 
 object nivel1 {
 	//const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
@@ -27,11 +27,11 @@ object nivel1 {
 	const property supermoneda = new MonedaSuper()
 	const puerta1 = new Puerta(nivelSiguiente=nivel2)
 	const property enemigo1=new Enemigo(position = game.at(4, 8))
-	const enemigo2=new Enemigo()	
-	const enemigo3=new Enemigo()	
-	const enemigo4=new Enemigo()
-	const enemigo5=new Enemigo()	
-	const enemigo6=new Enemigo()	
+	const enemigo2=new Enemigo(image = "most1.png")	
+	const enemigo3=new Enemigo(image = "most2.png")	
+	const enemigo4=new Enemigo(image = "most3.png")
+	const enemigo5=new Enemigo(image = "most1.png")	
+	const enemigo6=new Enemigo(image = "most3.png")	
 	
 	
 	//method pantallaInicio(){

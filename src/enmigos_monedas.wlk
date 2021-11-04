@@ -3,7 +3,7 @@ import direcciones.*
 import personajes.*
 import nivel.*
 
-class Enemigo inherits Visual(image = "spikeMan_stand.png"){
+class Enemigo inherits Visual(image = "most2.png"){
 	method efecto(personaje_) {
 		personaje.recibirDanio()
 	}
@@ -41,7 +41,7 @@ class Reloj inherits Visual(image="reloj.png") {
 }
 
 
-class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
+class Puerta inherits Visual (image = "door.png" ,position = game.at(3,16)){
 	const puntosAConseguir = 90
 	const nivelSiguiente
 	method efecto(personaje_){
@@ -53,7 +53,4 @@ class Puerta inherits Visual (image = "puerta2.png" ,position = game.at(3,16)){
 	}
 }
 
-class Boton inherits Visual (image = "boton.png", position= game.at(10,15)){
-	const nivelSiguiente
-	
-}
+

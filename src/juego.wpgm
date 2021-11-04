@@ -3,6 +3,7 @@ import personajes.*
 import texto.*
 import nivel.*
 
+
 program juego {
 	game.cellSize(60)
 
@@ -13,5 +14,7 @@ program juego {
 	nivel0.configuracionInicial()
 	
 	game.start()
+	
+	
 }
 
