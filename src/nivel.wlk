@@ -12,7 +12,7 @@ object nivel0 {
 		game.addVisual(fondoIntro)
 		keyboard.space().onPressDo({nivel1.configuracionInicial()} )
 	}
-}//esto es horrrible
+}
 
 object nivel1 {
 	//const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))

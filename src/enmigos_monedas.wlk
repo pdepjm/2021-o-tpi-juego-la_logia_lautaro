@@ -5,7 +5,7 @@ import nivel.*
 
 class Enemigo inherits Visual(image = "spikeMan_stand.png"){
 	method efecto(personaje_) {
-		personaje.recibirDanio()
+		personaje_.recibirDanio()
 	}
 	
 	method moverParaDireccionAlAzar() {
@@ -17,7 +17,7 @@ class Enemigo inherits Visual(image = "spikeMan_stand.png"){
 	
 class Moneda inherits Visual(image = "coin_gold.png"){
 	method efecto(personaje_) {
-		personaje.sumarPuntos()
+		personaje_.sumarPuntos()
 		game.removeVisual(self)
 		
 	}

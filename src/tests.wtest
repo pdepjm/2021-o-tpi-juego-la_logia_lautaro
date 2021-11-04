@@ -5,33 +5,35 @@ import direcciones.*
 import nivel.*
 import wollok.game.*
 
-/*describe "Inserte descripción" {
-	method initialize() {
+describe "Tests" {
+/*	method initialize() {
 		soundProducer.provider(soundProviderMock)		
-	}
+	}*/
 	
 	test "testX" {
 		assert.that(true)
 	}	
-	*/
 	
-/*test "Al moverse hacia una direccion cambia su posicion" {
-	zombie.moverPara(derecha)
-	assert.equals(game.at(3,2), zombie.position())
+	
+test "Al moverse hacia una direccion cambia su posicion" {
+	personaje.moverPara(derecha)
+	assert.equals(game.at(3,2), personaje.position())
 }
 
 test "cuando toca una moneda aumenta sus puntos" {
-	nivel.moneda1().efecto(zombie)
-	assert.equals(10, zombie.puntos())
+	
+	nivel1.moneda1().efecto(personaje)
+	assert.equals(10, personaje.puntos())
 }
 
 
 test "cuando toca un enemigo pierde vida"{
-	nivel.enemigo1().efecto(zombie)
-	assert.equals(2, zombie.vidas())
+	nivel1.enemigo1().efecto(personaje)
+	assert.equals(2, personaje.vidas())
 }
 test "cuando toca la super moneda aumenta la vida"{
-	monedaSuper.efecto(zombie)
-	assert.equals(4, zombie.vidas())
+	nivel1.supermoneda().efecto(personaje)
+	assert.equals(4, personaje.vidas())
 }
-*/
+}
+
