@@ -4,6 +4,16 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
+class Teclado{
+	method configurarTeclas(){
+		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
+		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
+		keyboard.up().onPressDo({personaje.moverPara(arriba)})
+		keyboard.down().onPressDo({personaje.moverPara(abajo)})
+		keyboard.enter().onPressDo({ personaje.hablar()} )
+		keyboard.e().onPressDo({game.stop()} )	
+	}
+}
 object nivel0 {
 	const fondoIntro = new Visual (image = "introjuego2Grande.jpg" ,position=game.at(0,0))
 		
@@ -14,7 +24,7 @@ object nivel0 {
 	}
 }
 
-object nivel1 {
+object nivel1 inherits Teclado {
 	//const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
@@ -57,16 +67,6 @@ object nivel1 {
 		
 		//POLIMORFISMO
 		game.onCollideDo(personaje,{elemento=>elemento.efecto(personaje)})
-	}
-	
-	method configurarTeclas(){
-		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
-		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
-		keyboard.up().onPressDo({personaje.moverPara(arriba)})
-		keyboard.down().onPressDo({personaje.moverPara(abajo)})
-		keyboard.enter().onPressDo({ personaje.hablar()} )
-		keyboard.e().onPressDo({game.stop()} )
-		
 	}
 	
 	//method acciones(){ 
@@ -114,7 +114,7 @@ object nivel1 {
 	
 }
 
-object nivel2 {
+object nivel2 inherits Teclado {
 	
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
@@ -168,15 +168,6 @@ object nivel2 {
 		game.onCollideDo(personaje,{elemento=>elemento.efecto(personaje)})
 	}
 	
-	method configurarTeclas(){
-		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
-		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
-		keyboard.up().onPressDo({personaje.moverPara(arriba)})
-		keyboard.down().onPressDo({personaje.moverPara(abajo)})
-		keyboard.enter().onPressDo({ personaje.hablar()} )
-		keyboard.e().onPressDo({game.stop()} )
-		
-	}
 	
 	
 	method configurarMonedas() {
