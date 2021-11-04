@@ -12,6 +12,7 @@ class Teclado{
 		keyboard.down().onPressDo({personaje.moverPara(abajo)})
 		keyboard.enter().onPressDo({ personaje.hablar()} )
 		keyboard.e().onPressDo({game.stop()} )	
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
 	}
 }
 object nivel0 {
@@ -43,15 +44,6 @@ object nivel1 inherits Teclado {
 	const enemigo5=new Enemigo(image = "most1.png")	
 	const enemigo6=new Enemigo(image = "most3.png")	
 	
-	
-	//method pantallaInicio(){
-	//	game.clear()
-	//	game.title("zombie attack")
-	//	game.height(20)
-	 //   game.width(30)
-	//	game.addVisual(inicioDelJuego)
-	//	keyboard.a().onPressDo{self.configuracionInicial()}
-	//}
 		
 	method configuracionInicial(){
 		game.clear()
@@ -218,9 +210,22 @@ object nivel3 {
 	
 	method configuracionInicial(){
 		game.clear()
-		const fondoGanador = new Visual (image = "fondoGanador2.jpg" ,position=game.at(0,0))
+		const fondoGanador = new Visual (image = "winner2.jpg" ,position=game.at(0,0))
 		game.addVisual(fondoGanador)
 		keyboard.e().onPressDo({game.stop()} )
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
 	}
 	
 }
+
+/*object fondoPerdedor {
+	
+	method configuracionInicial(){
+		game.clear()
+		const fondoPerdedor = new Visual (image="game_Over1.jpg",position=game.at(0,0))	
+		game.addVisual(fondoPerdedor)
+		keyboard.e().onPressDo({game.stop()} )
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
+	}
+	
+}*/

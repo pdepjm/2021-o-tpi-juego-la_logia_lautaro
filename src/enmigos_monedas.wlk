@@ -23,7 +23,7 @@ class Moneda inherits Visual(image = "coin_gold.png"){
 	}
 }
 
-class MonedaSuper inherits Moneda(image = "lighting_yellow.png") {
+class MonedaSuper inherits Moneda(image = "super.png") {
 	
 	override method efecto(personaje_) {
 		super(personaje_)
