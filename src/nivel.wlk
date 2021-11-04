@@ -4,17 +4,27 @@ import direcciones.*
 import wollok.game.*
 import texto.*
 
+class Teclado{
+	method configurarTeclas(){
+		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
+		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
+		keyboard.up().onPressDo({personaje.moverPara(arriba)})
+		keyboard.down().onPressDo({personaje.moverPara(abajo)})
+		keyboard.enter().onPressDo({ personaje.hablar()} )
+		keyboard.e().onPressDo({game.stop()} )	
+	}
+}
 object nivel0 {
 	const fondoIntro = new Visual (image = "introjuego2Grande.jpg" ,position=game.at(0,0))
 		
 	method configuracionInicial(){
-		game.boardGround("fondo.jpg")
+		game.boardGround("board1.jpg")
 		game.addVisual(fondoIntro)
 		keyboard.space().onPressDo({nivel1.configuracionInicial()} )
 	}
 }
 
-object nivel1 {
+object nivel1 inherits Teclado {
 	//const inicioDelJuego = new Visual(image = "introjuego2.png", position = game.at(1,1))
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
@@ -27,11 +37,11 @@ object nivel1 {
 	const property supermoneda = new MonedaSuper()
 	const puerta1 = new Puerta(nivelSiguiente=nivel2)
 	const property enemigo1=new Enemigo(position = game.at(4, 8))
-	const enemigo2=new Enemigo()	
-	const enemigo3=new Enemigo()	
-	const enemigo4=new Enemigo()
-	const enemigo5=new Enemigo()	
-	const enemigo6=new Enemigo()	
+	const enemigo2=new Enemigo(image = "most1.png")	
+	const enemigo3=new Enemigo(image = "most2.png")	
+	const enemigo4=new Enemigo(image = "most3.png")
+	const enemigo5=new Enemigo(image = "most1.png")	
+	const enemigo6=new Enemigo(image = "most3.png")	
 	
 	
 	//method pantallaInicio(){
@@ -57,16 +67,6 @@ object nivel1 {
 		
 		//POLIMORFISMO
 		game.onCollideDo(personaje,{elemento=>elemento.efecto(personaje)})
-	}
-	
-	method configurarTeclas(){
-		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
-		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
-		keyboard.up().onPressDo({personaje.moverPara(arriba)})
-		keyboard.down().onPressDo({personaje.moverPara(abajo)})
-		keyboard.enter().onPressDo({ personaje.hablar()} )
-		keyboard.e().onPressDo({game.stop()} )
-		
 	}
 	
 	//method acciones(){ 
@@ -114,7 +114,7 @@ object nivel1 {
 	
 }
 
-object nivel2 {
+object nivel2 inherits Teclado {
 	
 	const property moneda1=new Moneda()
 	const moneda2=new Moneda()
@@ -168,15 +168,6 @@ object nivel2 {
 		game.onCollideDo(personaje,{elemento=>elemento.efecto(personaje)})
 	}
 	
-	method configurarTeclas(){
-		keyboard.left().onPressDo({ personaje.moverPara(izquierda) })
-		keyboard.right().onPressDo({ personaje.moverPara(derecha) })
-		keyboard.up().onPressDo({personaje.moverPara(arriba)})
-		keyboard.down().onPressDo({personaje.moverPara(abajo)})
-		keyboard.enter().onPressDo({ personaje.hablar()} )
-		keyboard.e().onPressDo({game.stop()} )
-		
-	}
 	
 	
 	method configurarMonedas() {
