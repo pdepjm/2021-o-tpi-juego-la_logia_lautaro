@@ -23,7 +23,7 @@ class Moneda inherits Visual(image = "coin_gold.png"){
 	}
 }
 
-class MonedaSuper inherits Moneda(image = "lighting_yellow.png") {
+class MonedaSuper inherits Moneda(image = "super.png") {
 	
 	override method efecto(personaje_) {
 		super(personaje_)
@@ -36,6 +36,8 @@ class MonedaSuper inherits Moneda(image = "lighting_yellow.png") {
 class Reloj inherits Visual(image="reloj.png") {
 	method efecto(personaje_) {
 		game.removeTickEvent("movimiento_enemigo")
+		game.removeTickEvent("movimiento_enemigo")
+		game.say(personaje,"Deje a dos enemigos quietos!!")
 		game.removeVisual(self)
 	}
 }
@@ -49,6 +51,10 @@ class Puerta inherits Visual (image = "door.png" ,position = game.at(3,16)){
 		if(personaje.puntos()==puntosAConseguir){
 			game.clear()
 			nivelSiguiente.configuracionInicial()
+		}
+		else {
+			game.say(personaje,"Me faltan monedas")
+			//throw new DomainException(message="No se tienen los puntos suficientes")
 		}
 	}
 }

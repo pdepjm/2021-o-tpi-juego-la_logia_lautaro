@@ -2,7 +2,6 @@ import wollok.game.*
 import enmigos_monedas.*
 
 object personaje inherits Visual(image = "character_zombie_walk1.png",position = new Position(x=2,y=2)) {
-	//var posicion = game.at(2,2)
 	var puntos = 0
 	var property vidas = 3
 	const frases = ["Juguemos!","Esquiva a los enemigos!","Agarra todas las monedas!"]
@@ -18,6 +17,7 @@ object personaje inherits Visual(image = "character_zombie_walk1.png",position =
 	}
 	
 	method recibirDanio() {
+		game.say(self,"AUCH")
 		if(vidas==1){
 			const fondoPerdedor = new Visual (image="gameOver.jpg",position=game.at(0,0))	
 			game.addVisual(fondoPerdedor)
@@ -53,8 +53,8 @@ class Visual {
 	var property image
 	
 	//Posicion aleatoria
-	const x = 0.randomUpTo(27.truncate(0))
-    const y = 1.randomUpTo(17.truncate(1))
+	const x = 2.randomUpTo(27.truncate(2))
+    const y = 2.randomUpTo(17.truncate(2))
 	var property position = game.at(x,y)
 	
 }

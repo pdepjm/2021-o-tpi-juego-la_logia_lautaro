@@ -13,6 +13,7 @@ Se usan clases en Monedas y Enemigos para poder tener varias instancias de estos
 Se instancian en el objeto nivel mediante la declaración de sus atributos que hacen referencia a estas instancias.
 
 Herencia: ¿Entre quiénes y por qué? ¿Qué comportamiento es común y cuál distinto?
-Se aplica herencia en el objeto monedaSuper que hereda atributos y comportamientos en común. El comportamiento distinto es en el efecto ya que agrega una vida y el comportamiento común es sumarle los puntos.
+Se aplica herencia en el objeto monedaSuper que hereda atributos y comportamientos en común. El comportamiento distinto es en el efecto ya que agrega una vida y 
+* el comportamiento común es sumarle los puntos.
 Composición: ¿Qué objetos interactúan? ¿Dónde se delega? ¿Por qué no herencia?
  */

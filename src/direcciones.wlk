@@ -1,6 +1,6 @@
 object izquierda {
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().x()!=0)
+		if(objeto.position().x()>0)
 		{
 		posicionActual.left(1) 
 		}
@@ -11,7 +11,7 @@ object izquierda {
 
 object derecha {
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().x()!=28)
+		if(objeto.position().x()<28)
 		{
 		posicionActual.right(1) 
 		}
@@ -23,7 +23,7 @@ object derecha {
 
 object arriba{
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().y()!=18)
+		if(objeto.position().y()<18)
 		{
 		posicionActual.up(1) 
 		}
@@ -34,7 +34,7 @@ object arriba{
 
 object abajo{
 	method proximaPosicion(posicionActual,objeto) =
-		if(objeto.position().y()!=1)
+		if(objeto.position().y()>2)
 		{
 		posicionActual.down(1) 
 		}
@@ -42,10 +42,3 @@ object abajo{
 		posicionActual.down(0) 
 		}
 }
-
-//object movimiento{
-	//method moverPara(direccion, personaje){
-		//personaje.position(direccion.proximaPosicion(personaje.position(), personaje))
-		
-//	}
-//}

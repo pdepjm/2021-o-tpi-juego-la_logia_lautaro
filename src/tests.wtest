@@ -6,14 +6,6 @@ import nivel.*
 import wollok.game.*
 
 describe "Tests" {
-/*	method initialize() {
-		soundProducer.provider(soundProviderMock)		
-	}*/
-	
-	test "testX" {
-		assert.that(true)
-	}	
-	
 	
 test "Al moverse hacia una direccion cambia su posicion" {
 	personaje.moverPara(derecha)
@@ -21,17 +13,22 @@ test "Al moverse hacia una direccion cambia su posicion" {
 }
 
 test "cuando toca una moneda aumenta sus puntos" {
-	
-	nivel1.moneda1().efecto(personaje)
+	const moneda1 = new Moneda()
+	game.addVisual(moneda1)
+	moneda1.efecto(personaje)
 	assert.equals(10, personaje.puntos())
 }
 
 
 test "cuando toca un enemigo pierde vida"{
-	nivel1.enemigo1().efecto(personaje)
+	const enemigo1 = new Enemigo()
+	game.addVisual(enemigo1)
+	game.addVisual(personaje)
+	enemigo1.efecto(personaje)
 	assert.equals(2, personaje.vidas())
 }
 test "cuando toca la super moneda aumenta la vida"{
+	game.addVisual(nivel1.supermoneda())
 	nivel1.supermoneda().efecto(personaje)
 	assert.equals(4, personaje.vidas())
 }
