@@ -12,6 +12,7 @@ class Teclado{
 		keyboard.down().onPressDo({personaje.moverPara(abajo)})
 		keyboard.enter().onPressDo({ personaje.hablar()} )
 		keyboard.e().onPressDo({game.stop()} )	
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
 	}
 }
 object nivel0 {
@@ -29,10 +30,11 @@ object nivel1 inherits Teclado {
 	const property supermoneda = new MonedaSuper()
 	const puerta1 = new Puerta(nivelSiguiente=nivel2)
 	const enemigos = [new Enemigo(image = "most1.png"),new Enemigo(image = "most2.png")	,new Enemigo(image = "most3.png"),new Enemigo(image = "most3.png"),new Enemigo(image = "most1.png"),new Enemigo(image = "most2.png")]
-	
-	
+
 		
 	method configuracionInicial(){
+		personaje.puntos(0)
+		personaje.vidas(3)
 		game.clear()
 		game.addVisual(puerta1)
 		game.addVisual(textoPuntos)
@@ -100,9 +102,22 @@ object nivel3 {
 	
 	method configuracionInicial(){
 		game.clear()
-		const fondoGanador = new Visual (image = "fondoGanador2.jpg" ,position=game.at(0,0))
+		const fondoGanador = new Visual (image = "winner2.jpg" ,position=game.at(0,0))
 		game.addVisual(fondoGanador)
 		keyboard.e().onPressDo({game.stop()} )
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
 	}
 	
 }
+
+/*object fondoPerdedor {
+	
+	method configuracionInicial(){
+		game.clear()
+		const fondoPerdedor = new Visual (image="game_Over1.jpg",position=game.at(0,0))	
+		game.addVisual(fondoPerdedor)
+		keyboard.e().onPressDo({game.stop()} )
+		keyboard.z().onPressDo({nivel1.configuracionInicial()} )
+	}
+	
+}*/
