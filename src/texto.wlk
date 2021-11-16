@@ -1,4 +1,5 @@
 import wollok.game.*
+import personajes.*
 
 // ¡Los visuales también pueden ser texto!
 // Hay que definir la posición en la que debe aparecer
@@ -11,13 +12,27 @@ import wollok.game.*
 // Les dejamos algunos ejemplos
 // ¡También se puede combinar con las imágenes!
 
-object texto {
+object textoPuntos {
 	
-	method position() = game.at(2, 4)
+	method position() = game.at(28, 18)
 	
-	method text() = "¡Pepita!"
+	method text() = "Puntos: " + (personaje.puntos()).toString()
 	
 	method textColor() = paleta.verde()
+	
+	method efecto(unzombie){}
+	
+}
+
+object textoVidas {
+	
+	method position() = game.at(2, 18)
+	
+	method text() = "X " + (personaje.vidas()).toString()
+	
+	method textColor() = paleta.rojo()
+	
+	method efecto(personaje_){}
 	
 }
 

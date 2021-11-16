@@ -14,7 +14,7 @@ object soundProducer {
 		provider = _provider
 	}
 	
-	method sound(audioFile) = provider.sound(audioFile)
+	method sound(audioFile ) = provider.sound(audioFile)
 	
 }
 
