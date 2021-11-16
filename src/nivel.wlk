@@ -102,7 +102,7 @@ object nivel3 {
 	
 	method configuracionInicial(){
 		game.clear()
-		const fondoGanador = new Visual (image = "winner2.jpg" ,position=game.at(0,0))
+		const fondoGanador = new Visual (image = "winner.jpg" ,position=game.at(0,0))
 		game.addVisual(fondoGanador)
 		keyboard.e().onPressDo({game.stop()} )
 		keyboard.z().onPressDo({nivel1.configuracionInicial()} )

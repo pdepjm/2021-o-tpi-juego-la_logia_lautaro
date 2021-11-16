@@ -21,7 +21,7 @@ object personaje inherits Visual(image = "character_zombie_walk1.png",position =
 		game.say(self,"AUCH")
 		if(vidas==1){
 			//fondoPerdedor.configuracionInicial()
-			const fondoPerdedor = new Visual (image="game_Over1.jpg",position=game.at(0,0))	
+			const fondoPerdedor = new Visual (image="game over.jpg",position=game.at(0,0))	
 			game.addVisual(fondoPerdedor)
 			keyboard.z().onPressDo({nivel1.configuracionInicial()} )
 		}
